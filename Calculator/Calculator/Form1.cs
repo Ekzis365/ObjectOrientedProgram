@@ -12,8 +12,8 @@ namespace Calculator
 {
     public partial class Form1 : Form
     {
-        bool plus = false, minus = false, multiply = false, divide = false;
-        double var1, var2;
+        bool plus = false, minus = false, multiply = false, divide = false, exp = false, tang = false, atang = false;
+
         public Form1()
         {
             InitializeComponent();
@@ -105,6 +105,9 @@ namespace Calculator
                 plus = false;
                 multiply = false;
                 minus = false;
+                exp = false;
+                tang = false;
+                atang = false;
             }
         }
 
@@ -118,6 +121,57 @@ namespace Calculator
                 plus = false;
                 minus = false;
                 divide = false;
+                exp = false;
+                tang = false;
+                atang = false;
+            }
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            atang = true;
+            if (atang)
+            {
+                textBox1.Tag = textBox1.Text;
+                textBox1.Text = "";
+                multiply = false;
+                plus = false;
+                minus = false;
+                divide = false;
+                exp = false;
+                tang = false;
+            }
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            exp = true;
+            if (exp)
+            {
+                textBox1.Tag = textBox1.Text;
+                textBox1.Text = "";
+                plus = false;
+                minus = false;
+                divide = false;
+                multiply = false;
+                tang = false;
+                atang = false;
+            }
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            tang = true;
+            if (tang)
+            {
+                textBox1.Tag = textBox1.Text;
+                textBox1.Text = "";
+                plus = false;
+                minus = false;
+                divide = false;
+                multiply = false;
+                exp = false;
+                atang = false;
             }
         }
 
@@ -137,6 +191,9 @@ namespace Calculator
                 plus = false;
                 multiply = false;
                 divide = false;
+                exp = false;
+                tang = false;
+                atang = false;
             }
             
         }
@@ -157,6 +214,9 @@ namespace Calculator
                 minus = false;
                 multiply = false;
                 divide = false;
+                exp = false;
+                tang = false;
+                atang = false;
             }
            
         }
@@ -207,7 +267,22 @@ namespace Calculator
                 double S = Convert.ToDouble(textBox1.Tag) / Convert.ToDouble(textBox1.Text);
                 textBox1.Text = S.ToString();
             }
-            
+            if(exp)
+            {
+                double expanent = 2.7;
+                double S = Math.Pow(Convert.ToDouble(expanent), Convert.ToDouble(textBox1.Tag));
+                textBox1.Text = S.ToString();
+            }
+            if(tang)
+            {
+                double S = Math.Tan(Convert.ToDouble(textBox1.Tag));
+                textBox1.Text = S.ToString();
+            }
+            if(atang)
+            {
+                double S = Math.Atan(Convert.ToDouble(textBox1.Tag));
+                textBox1.Text = S.ToString();
+            }
         }
     }
 }
