@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -269,17 +269,35 @@ namespace Calculator
             }
             if(exp)
             {
+                if (textBox1.Tag == "")
+                {
+                    label1.Text = "Выберите одно действие";
+                    label1.Visible = true;
+                    return;
+                }
                 double expanent = 2.7;
                 double S = Math.Pow(Convert.ToDouble(expanent), Convert.ToDouble(textBox1.Tag));
                 textBox1.Text = S.ToString();
             }
             if(tang)
             {
+                if (textBox1.Tag == "")
+                {
+                    label1.Text = "Выберите одно действие";
+                    label1.Visible = true;
+                    return;
+                }
                 double S = Math.Tan(Convert.ToDouble(textBox1.Tag));
                 textBox1.Text = S.ToString();
             }
             if(atang)
             {
+                if (textBox1.Tag == "")
+                {
+                    label1.Text = "Выберите одно действие";
+                    label1.Visible = true;
+                    return;
+                }
                 double S = Math.Atan(Convert.ToDouble(textBox1.Tag));
                 textBox1.Text = S.ToString();
             }
